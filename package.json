@@ -1,0 +1,19 @@
+{
+  "name": "instaspotsproject",
+  "version": "1.0.0",
+  "description": "InstaSpots Project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "Circle3 Members",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
