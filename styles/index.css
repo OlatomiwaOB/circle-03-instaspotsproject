@@ -21,14 +21,49 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
-}
 
+}
+header{
+    margin: 0 4rem ;
+}
+article{
+    background-color: #FCF5E5;
+    padding: 0 4rem;
+}
 /* Project parent container */
 .container {
     max-width: var(--maxWidth);
 }
+main{
+    width: 100%;
+}
+main section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 25px;
+}
+main section img:first-child{
+width: 100%;
+border-radius: 5px;
+}
 
+main section .lastChild{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main section .lastChild i{
+ color: rgb(165, 165, 165);
+ font-weight: 100;
+}
 
+main section .lastChild p{
+ font-weight: 500;
+ font-size: 20px;
+}
 
 
 /* mobile view styling */
