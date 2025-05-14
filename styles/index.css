@@ -44,11 +44,8 @@ article {
 }
 
 .empty-div {
-    border: 1px solid black;
+    border: 1px solid #6e6e6eb2;
     width: 100%;
-    color: var(--text-primary-color);
-    opacity: 0.4;
-    margin-top: 20px;
 
 }
 
@@ -263,6 +260,7 @@ footer p {
 
     .empty-div {
         width: 100% ;
+         border: 1px solid #6e6e6eb2;
     }
 
     /* Main Section styles */
@@ -431,10 +429,7 @@ footer p {
     }
 
     .empty-div {
-        border: 1px solid black;
-        color: var(--text-primary-color);
-        opacity: 0.4;
-        margin-top: 20px;
+        border: 1px solid #6e6e6eb2;
     }
 
 
