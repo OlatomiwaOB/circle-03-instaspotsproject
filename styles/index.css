@@ -24,25 +24,80 @@ body {
   font-style: normal;
   background-color: var(--background-color);
 }
-
 /* Project parent container */
 .container {
   max-width: var(--maxWidth);
 }
 
+/* Desktop View Styling */
+main {
+    width: 100%;
+  }
+  section{
+    margin-top:30px ;
+  }
+  main section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 25px;
+    padding: 1.5rem;
+  }
+
+
+  main section img:first-child {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  main section .card-text {
+    margin-block-start: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  main section .card-text i {
+    color: rgb(165, 165, 165);
+    font-weight: 100;
+  }
+  
+  main section .card-text p {
+    font-weight: 400;
+  }
+
+  footer {
+    margin-block: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer p {
+    color: var(--text-primary-color);
+    opacity: 0.7;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25rem;
+}
+
+  
+
 /* Mobile View Styling */
-@media (min-width: 320px) and (max-width: 480px) {
+@media  (max-width: 480px) {
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
     min-height: 100vh;
   }
   /* Hero Section styles  */
   .hero {
     width: 100%;
     background-color: var(--primary-color);
+    padding-block: 20px;
     height: 49px;
     display: flex;
     align-items: center;
@@ -187,5 +242,5 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.25rem;
-  }
+}
 }
