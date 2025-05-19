@@ -1,4 +1,35 @@
-import {cards} from './scripts/displayCard.js'
+const cards = [
+    {
+        "image": "assets/images/pexels-kassandre-pedro-8639743 1-6.png",
+        "text": "Val Thorens",
+        "name": "image of a Val Thorens"
+    },
+    {
+        "image": "assets/images/pexels-kassandre-pedro-8639743 1-1.png",
+        "text": "Restaurant terrace",
+        "name": "image of a Restaurant"
+    },
+    {
+        "image": "assets/images/pexels-kassandre-pedro-8639743 1-2.png",
+        "text": "An outdoor cafe",
+        "name": "love icon"
+    },
+    {
+        "image": "assets/images/pexels-kassandre-pedro-8639743 1-3.png",
+        "text": "A very long bridge, over the forest...",
+        "name": "image of a bridge"
+    },
+    {
+        "image": "assets/images/pexels-kassandre-pedro-8639743 1-4.png",
+        "text": "Tunnel with morning light",
+        "name": "image of a Tunnel"
+    },
+    {
+        "image": "assets/images/pexels-kassandre-pedro-8639743 1-5.png",
+        "text": "Mountain house",
+        "name": "image of a Mountain"
+    }
+]
 
 // Get DOM elements
 const editBtn = document.querySelector("#edit_btn");
@@ -70,7 +101,7 @@ function displayCard(cards) {
                 <img src="${card.image} "alt="${card.name}"/>
                 <div class="card-text">
                     <p>${card.text}</p>
-                    <img src="../assets/images/Union.svg" alt="love icon" />
+                    <img src="assets/images/Union.svg" alt="love icon" />
                 </div>
             `;
             cardsContainer.append(cardsItem)
