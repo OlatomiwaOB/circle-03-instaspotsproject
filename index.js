@@ -70,7 +70,7 @@ function displayCard(cards) {
                 <img src="${card.image} "alt="${card.name}"/>
                 <div class="card-text">
                     <p>${card.text}</p>
-                    <img src="./assets/images/Union.svg" alt="love icon" />
+                    <img src="../assets/images/Union.svg" alt="love icon" />
                 </div>
             `;
             cardsContainer.append(cardsItem)

@@ -1,31 +1,31 @@
 const cards = [
     {
-        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-6.png",
+        "image": "../assets/images/pexels-kassandre-pedro-8639743 1-6.png",
         "text": "Val Thorens",
         "name": "image of a Val Thorens"
     },
     {
-        "image": "/assets/images/pexels-kassandre-pedro-8639743 1-1.png",
+        "image": "../assets/images/pexels-kassandre-pedro-8639743 1-1.png",
         "text": "Restaurant terrace",
         "name": "image of a Restaurant"
     },
     {
-        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-2.png",
+        "image": "../assets/images/pexels-kassandre-pedro-8639743 1-2.png",
         "text": "An outdoor cafe",
         "name": "love icon"
     },
     {
-        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-3.png",
+        "image": "../assets/images/pexels-kassandre-pedro-8639743 1-3.png",
         "text": "A very long bridge, over the forest...",
         "name": "image of a bridge"
     },
     {
-        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-4.png",
+        "image": "../assets/images/pexels-kassandre-pedro-8639743 1-4.png",
         "text": "Tunnel with morning light",
         "name": "image of a Tunnel"
     },
     {
-        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-5.png",
+        "image": "../assets/images/pexels-kassandre-pedro-8639743 1-5.png",
         "text": "Mountain house",
         "name": "image of a Mountain"
     }
