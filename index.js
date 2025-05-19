@@ -1,3 +1,6 @@
+
+
+
 // Get DOM elements
 const editBtn = document.querySelector("#edit_btn");
 const modal = document.getElementById("profileModal");
@@ -8,6 +11,7 @@ const profileName = document.getElementById("profileName");
 const profileBio = document.getElementById("profileBio");
 const profileImage = document.getElementById("profileImage");
 
+let cards = []
 // Get current profile data
 const currentName = document.querySelector(".text1 h1").textContent;
 const currentBio = document.querySelector(".text1 p").textContent;
@@ -56,3 +60,28 @@ profileForm.addEventListener("submit", function (e) {
 
   closeModal();
 });
+
+async function getCardsItems () {
+    try {
+        const response = await fetch('cards.json');
+        if (!response.ok) {
+            throw new Error(`Error while fetching card details: ${response.status}`)
+        }
+        const data = response.json()
+        return data
+    } catch(err) {
+        console.error('Error:', err)
+        return null
+    }
+}
+
+getCardsItems()
+    .then(async data => {
+        if (data) {
+            cards = data
+            // console.log(cards)
+            const {displayCard } = await import ("./scripts/displayCard.js");
+            displayCard(cards)
+        }
+    }
+    ).catch(error => (error.message));
