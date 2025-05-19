@@ -1,24 +1,34 @@
-
-const cardsContainer = document.querySelector('.cards')
-
-function displayCard(cards) {
-    cardsContainer.innerHTML = ``;
-    if (cards.length > 0) {
-        cards.forEach(card => {
-            const cardsItem = document.createElement('div');
-            cardsItem.classList.add('card');
-            cardsItem.innerHTML = `
-                <img src="${card.image} "alt="${card.name}"/>
-                <div class="card-text">
-                    <p>${card.text}</p>
-                    <img src="./assets/images/Union.svg" alt="love icon" />
-                </div>
-            `;
-            cardsContainer.append(cardsItem)
-            console.log('worked')
-        })
+const cards = [
+    {
+        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-6.png",
+        "text": "Val Thorens",
+        "name": "image of a Val Thorens"
+    },
+    {
+        "image": "/assets/images/pexels-kassandre-pedro-8639743 1-1.png",
+        "text": "Restaurant terrace",
+        "name": "image of a Restaurant"
+    },
+    {
+        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-2.png",
+        "text": "An outdoor cafe",
+        "name": "love icon"
+    },
+    {
+        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-3.png",
+        "text": "A very long bridge, over the forest...",
+        "name": "image of a bridge"
+    },
+    {
+        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-4.png",
+        "text": "Tunnel with morning light",
+        "name": "image of a Tunnel"
+    },
+    {
+        "image": "./assets/images/pexels-kassandre-pedro-8639743 1-5.png",
+        "text": "Mountain house",
+        "name": "image of a Mountain"
     }
-}
+]
 
-export {displayCard};
-// displayCard()
+export {cards}

@@ -1,5 +1,4 @@
-
-
+import {cards} from './scripts/displayCard.js'
 
 // Get DOM elements
 const editBtn = document.querySelector("#edit_btn");
@@ -10,8 +9,8 @@ const profileForm = document.getElementById("profileForm");
 const profileName = document.getElementById("profileName");
 const profileBio = document.getElementById("profileBio");
 const profileImage = document.getElementById("profileImage");
+const cardsContainer = document.querySelector('.cards')
 
-let cards = []
 // Get current profile data
 const currentName = document.querySelector(".text1 h1").textContent;
 const currentBio = document.querySelector(".text1 p").textContent;
@@ -61,27 +60,23 @@ profileForm.addEventListener("submit", function (e) {
   closeModal();
 });
 
-async function getCardsItems () {
-    try {
-        const response = await fetch('cards.json');
-        if (!response.ok) {
-            throw new Error(`Error while fetching card details: ${response.status}`)
-        }
-        const data = response.json()
-        return data
-    } catch(err) {
-        console.error('Error:', err)
-        return null
+function displayCard(cards) {
+    cardsContainer.innerHTML = ``;
+    if (cards.length > 0) {
+        cards.forEach(card => {
+            const cardsItem = document.createElement('div');
+            cardsItem.classList.add('card');
+            cardsItem.innerHTML = `
+                <img src="${card.image} "alt="${card.name}"/>
+                <div class="card-text">
+                    <p>${card.text}</p>
+                    <img src="./assets/images/Union.svg" alt="love icon" />
+                </div>
+            `;
+            cardsContainer.append(cardsItem)
+            console.log('worked')
+        })
     }
 }
 
-getCardsItems()
-    .then(async data => {
-        if (data) {
-            cards = data
-            // console.log(cards)
-            const {displayCard } = await import ("./scripts/displayCard.js");
-            displayCard(cards)
-        }
-    }
-    ).catch(error => (error.message));
+displayCard(cards)
