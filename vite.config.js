@@ -1,4 +1,15 @@
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
+
 export default defineConfig({
-    publicDir: 'public', // Add this line
-    // ... rest of your config
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      }
+    }
+  },
+  publicDir: 'public',
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg', '**/*.gif']
 })
