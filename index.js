@@ -127,7 +127,8 @@ cardElements.forEach((card) => {
   const cardText = card.querySelector(".card__text").textContent;
   const cardTextImg = card.querySelector(".card__icon");
 
-  card.addEventListener("click", () => {
+  cardImg.addEventListener("click", () => {
+    console.log('image clicked')
     imageModal.style.display = "block";
     //checking
     if (cardImg && cardText) {

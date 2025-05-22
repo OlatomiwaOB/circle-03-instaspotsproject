@@ -1,28 +1,23 @@
+/* css reset */
+@import url('reset.css');
 /* Project Font Family from Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Custom Variables */
 :root {
-  --text-primary-color: #212121;
-  --button-text-color: #fcf5e5;
-  --primary-color: #ffffff;
-  --maxWidth: 1440px;
-  --mobileMaxWidth: 320px;
-  --background-color: #fcf5e5;
-}
-
-/* Universal Styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    --text-primary-color: #212121;
+    --button-text-color: #fcf5e5;
+    --primary-color: #ffffff;
+    --maxWidth: 1440px;
+    --mobileMaxWidth: 320px;
+    --background-color: #fcf5e5;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  background-color: var(--background-color);
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    background-color: var(--background-color);
 }
 /* Project parent container */
 .instaspots {
@@ -30,8 +25,8 @@ body {
 }
 
 .wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /*header styling*/
@@ -54,8 +49,10 @@ body {
 .profile {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
   padding: 1.5rem;
+  width: 100%;
   max-width: 1340px;
 }
 
@@ -98,23 +95,39 @@ body {
   border: none;
   background-color: transparent;
   color: #212121b2;
+  font-weight: 500;
   cursor: pointer;
+  border: none;
+  padding: 0.75rem .8rem;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: all .3s ease-in-out;
 }
+
 .profile__edit-btn span {
   margin-inline-end: 5px;
 }
 
+.profile__edit-btn:hover {
+    background-color: #212121;
+    color: white;
+}
+
 /* changed the mr value */
 .profile__newpost-btn {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
   background-color: #212121;
   color: white;
+  font-weight: 500;
   border: none;
   padding: 0.75rem 2.2rem;
   border-radius: 5px;
   font-size: 0.9rem;
   cursor: pointer;
   transition: opacity ease-in-out 0.5s;
-  margin-right: 3.5rem;
+  /* margin-right: 3.5rem; */
 }
 
 .profile__newpost-btn:hover {
@@ -124,21 +137,21 @@ body {
 
 /* Desktop View Styling */
 main {
-  width: 100%;
+    width: 100%;
 }
 
 main section {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 25px;
-  row-gap: 30px;
-  padding: 1.5rem 3.5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 30px;
+    padding: 1.5rem 3.5rem;
 }
 
 main section img:first-child {
-  width: 100%;
-  border-radius: 5px;
+    width: 100%;
+    border-radius: 5px;
 }
 main section .card__content {
   margin-block-start: 10px;
@@ -162,10 +175,10 @@ main section .card__text {
 }
 
 footer {
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* added mt & mb */
@@ -181,15 +194,15 @@ footer {
 
 /* Modal Styles */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal__content {
@@ -277,17 +290,17 @@ footer {
 
 /* Desktop cards modal */
 .imgModal {
-  overflow: visible;
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .imageModal__content  {
   width: 100%;
@@ -326,17 +339,17 @@ footer {
 
 /* Tablet or Pad Styling */
 @media (max-width: 1028px) {
-  /* remove container styling for this media */
+/* remove container styling for this media */
 
-  /* Hero Section styles , removed height  */
-  .hero {
+/* Hero Section styles , removed height  */
+.hero {
     width: 100%;
     background-color: var(--primary-color);
     padding-block: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
    .profile {
     width: 100%;
@@ -345,12 +358,12 @@ footer {
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-  }
+}
 
   .profile__avatar-image {
     border-radius: 8px;
     width: 100%;
-  }
+}
 
   .profile__text {
     display: flex;
@@ -359,7 +372,7 @@ footer {
     flex-direction: column;
     width: 100%;
     text-align: start;
-  }
+}
 
   .profile__name {
     max-width: 100%;
@@ -367,26 +380,26 @@ footer {
     text-align: inherit;
     font-size: 1.2rem;
     line-height: 1.35rem;
-  }
+}
 
   .profile__bio {
     font-size: 1rem;
     max-width: 100%;
-  }
+}
 
   .profile__actions {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-  }
+}
 
   /* Edit Profile Button  */
   .profile__edit-btn {
     margin-block: 20px;
     font-size: 1.2rem;
     font-weight: 500;
-  }
+}
 
   /* remove the maxwidth */
   .profile__newpost-btn {
@@ -396,66 +409,66 @@ footer {
     font-size: 1.2rem;
     border: none;
     margin-bottom: -10px;
-  }
+}
 
   /* didn't add height here since i added it to the desktop */
   .horizontal-line {
     width: 97%;
-  }
+}
 
-  /* Main Section styles */
-  main {
+/* Main Section styles */
+main {
     width: 100%;
-  }
+}
 
-  main section {
+main section {
     padding: 1rem;
-  }
+}
 
-  .cards {
+.cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
     gap: 20px;
     width: 100%;
-  }
+}
 
-  .card > img {
+.card > img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
-  }
+}
 
   .card__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+}
 
   .card__text {
     color: var(--text-primary-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25rem;
-  }
+}
 
   .card__icon {
     color: var(--text-primary-color);
     opacity: 0.4;
-  }
+}
 
   .card__content .card__icon:hover {
     opacity: unset;
-  }
+}
 
-  /* Footer Section */
-  footer {
+/* Footer Section */
+footer {
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
   .footer__copyright {
     color: var(--text-primary-color);
@@ -463,42 +476,42 @@ footer {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.25rem;
-  }
+}
 }
 
 /* Mobile View Styling */
 @media (max-width: 480px) {
-  /* Hero Section styles removed the redundant height  */
-  .hero {
+/* Hero Section styles removed the redundant height  */
+.hero {
     width: 100%;
     background-color: var(--primary-color);
     padding-block: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
   /* made some changes here */
   .profile {
     display: flex;
     flex-direction: column;
-  }
+}
 
   .profile__avatar-image {
     border-radius: 8px;
     width: 150px;
     height: 150px;
-  }
+}
 
   /* added width to the hero-text */
   .profile__info {
     width: 38ch;
-  }
+}
 
   /* removed width */
   .profile__text {
     text-align: center;
-  }
+}
 
   /* removed max-with */
   .profile__name {
@@ -507,7 +520,7 @@ footer {
     font-size: 1.3rem;
     line-height: 1.5rem;
     color: var(--text-primary-color);
-  }
+}
 
   /* changed fontsize to 1rem */
   .profile__bio {
@@ -515,7 +528,7 @@ footer {
     color: #212121;
     opacity: 0.7;
     padding-top: 6px;
-  }
+}
 
   /* Edit Profile Button  */
   .profile__edit-btn {
@@ -523,10 +536,10 @@ footer {
     background-color: var(--background-color);
     color: var(--text-primary-color);
     opacity: 0.7;
-    margin: 20px auto;
+    margin: 5px auto;
     font-size: 16px;
     font-weight: 500;
-  }
+}
 
    .profile__newpost-btn {
     background-color: var(--text-primary-color);
@@ -536,19 +549,20 @@ footer {
     font-size: 16px;
     border: none;
     margin-bottom: -10px;
-  }
+    justify-content: center;
+}
 
   /* added empty div from mobile styling */
   .horizontal-line {
     width: 90%;
-  }
+}
 
-  /* Main Section styles */
-  main {
+/* Main Section styles */
+main {
     width: 100%;
-  }
+}
 
-  .cards {
+.cards {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -556,46 +570,46 @@ footer {
     gap: 20px;
     width: 100%;
     margin: 0 auto;
-  }
+}
 
-  .card > img {
+.card > img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
-  }
+}
 
   .card__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+}
 
   .card__text {
     color: var(--text-primary-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25rem;
-  }
+}
 
   .card__icon {
     color: var(--text-primary-color);
     opacity: 0.4;
-  }
+}
 
   .card__icon:hover {
     opacity: unset;
-  }
+}
 
   /* Modal Styling for Mobile */
   .modal__content {
     margin: 20% auto;
     padding: 1.5rem;
     width: 95%;
-  }
+}
 
   .modal__actions {
     flex-direction: column;
-  }
+}
 
   .modal__save-btn,
   .modal__cancel-btn {
