@@ -1,120 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>InstaSpots Project - Circle-03</title>
-        <link rel="stylesheet" href="./styles/index.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstaSpots Project - Circle-03</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-    <body>
-        <div class="instaspots">
-            <!-- Hero Section -->
-            <header class="hero" role="banner">
-                <!-- Logo Section -->
-                <nav class="hero__logo" role="navigation">
-                    <img class="hero__logo-image"  src="./assets/images/Logo.svg" alt="InstaSpots Logo Text">
-                </nav>
-            </header>
+  <body>
+    <div class="instaspots">
+      <!-- Hero Section -->
+      <header class="hero" role="banner">
+        <!-- Logo Section -->
+        <nav class="hero__logo" role="navigation">
+          <img
+            class="hero__logo-image"
+            src="./assets/images/Logo.svg"
+            alt="InstaSpots Logo Text"
+          />
+        </nav>
+      </header>
 
-        
-            <!-- Hero Content Section -->
-                <section class="profile wrapper">
-                    <!-- Avatar Image Section -->
-                    <figure class="profile__avatar avatar-image">
-                        <img class="profile__avatar-image" src="./assets/images/Avatar.png" alt="Avatar Image">
-                    </figure>
+      <!-- Hero Content Section -->
+      <section class="profile wrapper">
+        <!-- Avatar Image Section -->
+        <figure class="profile__avatar avatar-image">
+          <img
+            class="profile__avatar-image"
+            src="./assets/images/Avatar.png"
+            alt="Avatar Image"
+          />
+        </figure>
 
-                    <!-- Hero Text Section -->
-                    <article class="profile__info">
-                        <div class="profile__text">
-                            <h1 class="profile__name">Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...</h1>
-                            <p class="profile__bio">Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American singer, record producer, and
-                                entrepreneur. An influential figure in modern world...</p>
-                        </div>
-                        <!-- Hero Actions Section -->
-                        <div class="profile__actions">
-                        <!-- Edit Profile Button Section -->
-                            <button id="profile__edit-btn" class="profile__edit-btn">
-                                <span><i class="fa-solid fa-pencil"></i></span>
-                                Edit Profile
-                            </button>
-                            <!-- New Post Button Section -->
-                            <button class="profile__newpost-btn">
-                                <span><img src="./assets/images/Group 26.svg" alt="New Post Icon"></span>
-                                New Post
-                            </button>
-                        </div>
-                    </article>
-                </section>
-
-            <!-- section break -->
-            <hr class="horizontal-line wrapper"> </hr>
-            
-            <!-- Main Section -->
-            <main class="main wrapper">
-                <section class="cards">
-                    <!--List of Posted Cards-->
-                </section>
-            </main>
-
-            <!-- section break -->
-            <hr class="horizontal-line wrapper"></hr>
-            <!-- Footer Section -->
-            <footer class="footer wrapper">
-                <p class="footer__copyright">2024 &#169; Spots</p>
-            </footer>
-
-        </div>
-
-
-
-        <!-- Profile Edit Modal -->
-        <dialog id="profileModal" class="modal">
-            <div class="modal__content" role="document">
-                <header class="modal__header">
-                    <h2 id="modalTitle">Edit Profile</h2>
-                    <button type="button" class="modal__close">&times;</button>
-                </header>
-               
-                <form id="profileForm" class="modal__form">
-                    <div class="modal__form-group">
-                        <label for="profileName">Name:</label>
-                        <input type="text" id="profileName" name="profileName" minlength="3" maxlength="200" required>
-                    </div>
-                    <div class="modal__form-group">
-                        <label for="profileBio">Bio:</label>
-                        <textarea id="profileBio" name="profileBio" rows="4" required></textarea>
-                    </div>
-                    <div class="modal__form-group">
-                        <label for="profileImage">Profile Image:</label>
-                        <input type="file" id="profileImage" name="profileImage" accept="image/*">
-                    </div>
-                    <footer class="modal__actions">
-                        <button type="submit" class="modal__save-btn">Save Changes</button>
-                        <button type="button" class="modal__cancel-btn">Cancel</button>
-                    </footer>
-                </form>
-            </div>
-        </dialog>
-
-
-
-        <!-- Image Card Modal -->
-        <dialog id="imageModal" class="imgModal">
-            <div class="img-content imageModal__content" role="document">
-                <!-- <span class="close">&times;</span> -->
-                <button type="button" class="modal__close">
-                    &times;
-                </button>
-                    <img  id="modalImg" class="" src="" alt="" />
-                        <div class="modal__text">
-                            <p ></p>
-                            <img src="" alt="" />
-                        </div>
+        <!-- Hero Text Section -->
+        <article class="profile__info">
+          <div class="profile__text">
+            <h1 class="profile__name">
+              Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...
+            </h1>
+            <p class="profile__bio">
+              Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American
+              singer, record producer, and entrepreneur. An influential figure
+              in modern world...
+            </p>
           </div>
+          <!-- Hero Actions Section -->
+          <div class="profile__actions">
+            <!-- Edit Profile Button Section -->
+            <button id="profile__edit-btn" class="profile__edit-btn">
+              <span><i class="fa-solid fa-pencil"></i></span>
+              Edit Profile
+            </button>
+            <!-- New Post Button Section -->
+            <button class="profile__newpost-btn"
+						 id="profile__newpost-btn"
+						 type="button"
+						>
+              <span
+                ><img src="./assets/images/Group 26.svg" alt="New Post Icon"
+              /></span>
+              New Post
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <!-- section break -->
+      <hr class="horizontal-line wrapper" />
+
+      <!-- Main Section -->
+      <main class="main wrapper">
+        <section class="cards">
+          <!--List of Posted Cards-->
+        </section>
+      </main>
+
+      <!-- section break -->
+      <hr class="horizontal-line wrapper" />
+      <!-- Footer Section -->
+      <footer class="footer wrapper">
+        <p class="footer__copyright">2024 &#169; Spots</p>
+      </footer>
+    </div>
+
+    <!-- Profile Edit Modal -->
+    <dialog id="profileModal" class="modal">
+      <div class="modal__content" role="document">
+        <header class="modal__header">
+          <h2 id="modalTitle">Edit Profile</h2>
+          <button type="button" class="modal__close">&times;</button>
+        </header>
+
+        <form id="profileForm" class="modal__form">
+          <div class="modal__form-group">
+            <label for="profileName">Name:</label>
+            <input
+              type="text"
+              id="profileName"
+              name="profileName"
+              minlength="3"
+              maxlength="200"
+              required
+            />
+          </div>
+          <div class="modal__form-group">
+            <label for="profileBio">Bio:</label>
+            <textarea
+              id="profileBio"
+              name="profileBio"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <div class="modal__form-group">
+            <label for="profileImage">Profile Image:</label>
+            <input
+              type="file"
+              id="profileImage"
+              name="profileImage"
+              accept="image/*"
+            />
+          </div>
+          <footer class="modal__actions">
+            <button type="submit" class="modal__save-btn">Save Changes</button>
+            <button type="button" class="modal__cancel-btn">Cancel</button>
+          </footer>
+        </form>
+      </div>
+    </dialog>
+         <!--  The “New Post” button should have the functionality to post new image, including the title and heart icon using the modal and should be within size fixed for desktop and mobile too. -->
+    <!-- new post button -->
+      
+       <dialog id="newPostModal" class="new-post-modal" 
+      aria-labelledby="new-post-title" aria-modal="true">
+        <div class="new-post-modal-content" role="document">
+          <header class="modal-header">
+             <h2 id="newPostTitle">Create New Post +</h2>
+             <button type="button" class="new-post-close" aria-label="close new post modal">&times;</button>
+          </header>
+          <form id="newPostForm" aria-label="create new post form" class="newPstForm">
+            <div class="form-group">
+                 <div>Upload Image:</div>
+                <div class="upload-box" id="drop-zone">
+                  <label for="postImage">Drag & Drop or <span id="click-upload">browse</span></label>
+                  <input type="file" id="postImage" name="postImage" accept="image/*" required hidden>
+                  <div id="imagePreview" class="image preview" aria-live="polite"
+                  style="width: 100%; margin-top: 10px"
+                  ></div>
+                </div>
+            </div>
+            <div class="form-group">
+               <label for="postTitle" id="postTitleLabel">Title:</label>
+               <input type="text"
+               id="postTitle"
+               name="postTitle"
+               class="pstTitle"
+               required
+               minlength="2"
+               maxlength="20"
+               required="true"
+               aria-labelledby="postImageLabel"
+               >
+                <div id="titleHelp" class="title-help" aria-live="polite"></div>
+            </div>
+            <footer class="form-actions">
+               <button type="submit" class="save-btn">Post</button>
+               <button type="button" class="cancel-btn">Cancel</button>
+            </footer>
+          </form>
         </dialog>
-        <script type="module" src="index.js"></script>
-    </body>
+
+    <!-- Image Card Modal -->
+    <dialog id="imageModal" class="imgModal">
+      <div class="img-content imageModal__content" role="document">
+        <!-- <span class="close">&times;</span> -->
+        <button type="button" class="modal__close">&times;</button>
+        <img id="modalImg" class="" src="" alt="" />
+        <div class="modal__text">
+          <p></p>
+          <img src="" alt="" />
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
