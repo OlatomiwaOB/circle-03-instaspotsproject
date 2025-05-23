@@ -34,9 +34,10 @@
                                 entrepreneur. An influential figure in modern world...</p>
                         </div>
                         <!-- Hero Actions Section -->
-                        <div class="profile__actions">
+                        <div class="profile__actions"
+                        role="toolbar" aria-label="profile actions">
                         <!-- Edit Profile Button Section -->
-                            <button id="profile__edit-btn" class="profile__edit-btn">
+                            <button id="profile__edit-btn" class="profile__edit-btn" aria-label="edit profile">
                                 <span><i class="fa-solid fa-pencil"></i></span>
                                 Edit Profile
                             </button>
@@ -50,7 +51,7 @@
                 </section>
 
             <!-- section break -->
-            <hr class="horizontal-line wrapper"> </hr>
+            <hr class="horizontal-line wrapper">
             
             <!-- Main Section -->
             <main class="main wrapper">
@@ -75,7 +76,7 @@
             <div class="modal__content" role="document">
                 <header class="modal__header">
                     <h2 id="modalTitle">Edit Profile</h2>
-                    <button type="button" class="modal__close">&times;</button>
+                    <button type="button" class="modal__close" aria-label="close">&times;</button>
                 </header>
                
                 <form id="profileForm" class="modal__form">
@@ -102,10 +103,10 @@
 
 
         <!-- Image Card Modal -->
-        <dialog id="imageModal" class="imgModal">
+        <dialog id="imageModal" class="imgModal" aria-modal="true" role="dialog" aria-labelledby="imageModalTitle">
             <div class="img-content imageModal__content" role="document">
                 <!-- <span class="close">&times;</span> -->
-                <button type="button" class="modal__close">
+                <button type="button" class="modal__close" aria-label="Close">
                     &times;
                 </button>
                     <img  id="modalImg" class="" src="" alt="" />
