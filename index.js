@@ -329,3 +329,23 @@ newPostForm.addEventListener("submit", (e) => {
 
   newPostBtn.focus();
 });
+
+//keyevent
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" || e.key === "Esc") {
+    // Close Profile Modal if it's open
+    if (modal.style.display === "block") {
+      closeModal();
+    }
+
+    // Close New Post Modal if it's open
+    if (newPostModal.open) {
+      newPostModal.close();
+    }
+
+    // Close Card Preview Modal if it's open
+    if (imageModal.style.display === "block") {
+      closeCardModal();
+    }
+  }
+});
