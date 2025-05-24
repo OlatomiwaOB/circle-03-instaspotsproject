@@ -1,3 +1,5 @@
+console.log("🔥 JS file is running!");
+
 const cards = [
   {
     image: "assets/images/pexels-kassandre-pedro-8639743 1-6.png",
@@ -118,7 +120,9 @@ const modalImg = document.getElementById("modalImg");
 const modalText = document.querySelector(".modal__text p");
 const modalTextImg = document.querySelector(".modal__text img");
 const imageModal = document.getElementById("imageModal");
-const closeImgBtn = document.querySelector(".imgModal .imageModal__content .modal__close");
+const closeImgBtn = document.querySelector(
+  ".imgModal .imageModal__content .modal__close"
+);
 
 //mapping through cards
 cardElements.forEach((card) => {
@@ -149,4 +153,129 @@ window.addEventListener("click", (e) => {
   if (e.target === imageModal) {
     closeCardModal();
   }
+});
+// The “New Post” button should have the functionality to post new image, including the title and heart icon using the modal and should be within size fixed for desktop and mobile too.
+// New Post functionality
+// Modal elements
+const newPostBtn = document.getElementById("profile__newpost-btn");
+const newPostModal = document.getElementById("newPostModal");
+const newPostClose = document.querySelector(".new-post-close");
+const uploadClick = document.getElementById("click-upload");
+const newPostForm = document.getElementById("newPostForm");
+const dropZone = document.getElementById("drop-zone");
+const fileInput = document.getElementById("postImage");
+const preview = document.getElementById("imagePreview");
+const titleInput = document.getElementById("postTitle");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const postBtn = document.getElementById("postBtn");
+const postCnclBtn = document.querySelector(".cancel-btn");
+const cardContainer = document.getElementById("cardContainer");
+const titleHelp = document.getElementById("titleHelp");
+
+let isFavorite = true;
+
+// Open/close modal
+newPostBtn.addEventListener("click", () => newPostModal.showModal());
+newPostClose.addEventListener("click", () => newPostModal.close());
+postCnclBtn.addEventListener("click", () => newPostModal.close());
+
+// File upload
+uploadClick.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  fileInput.click();
+});
+
+dropZone.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  dropZone.classList.add("highlight");
+});
+
+dropZone.addEventListener("dragleave", () => {
+  dropZone.classList.remove("highlight");
+});
+
+dropZone.addEventListener("drop", (e) => {
+  e.preventDefault();
+  dropZone.classList.remove("highlight");
+  const file = e.dataTransfer.files[0];
+  if (file) {
+    fileInput.files = e.dataTransfer.files;
+    showPreview(file);
+    validateForm();
+  }
+});
+
+fileInput.addEventListener("change", () => {
+  const file = fileInput.files[0];
+  if (file && file.type.startsWith("image/")) {
+    showPreview(file);
+  }
+  validateForm();
+});
+
+// Show preview image
+function showPreview(file) {
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    preview.innerHTML = `<img src="${e.target.result}" alt="Preview" />`;
+  };
+  reader.readAsDataURL(file);
+}
+
+// Validate title and image, update button state and help text
+function validateForm() {
+  const title = titleInput.value.trim();
+  const titleLength = title.length;
+  const min = 3;
+  const max = 50;
+  const imageValid = fileInput.files.length > 0;
+  let message = "";
+
+  if (titleLength < min) {
+    message = `Title is too short (${titleLength}/${min})`;
+    titleHelp.classList.remove("valid");
+  } else if (titleLength > max) {
+    message = `Title is too long (${titleLength}/${max})`;
+    titleHelp.classList.remove("valid");
+  } else {
+    message = `Title length: ${titleLength}/${max}`;
+    titleHelp.classList.add("valid");
+  }
+
+  titleHelp.textContent = message;
+  postBtn.disabled = !(titleLength >= min && titleLength <= max && imageValid);
+}
+
+titleInput.addEventListener("input", validateForm);
+
+// Handle post submission
+newPostForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // Stop form submission
+
+  const title = titleInput.value.trim();
+  const min = 3;
+  const max = 50;
+  const imageValid = fileInput.files.length > 0;
+
+  // Validation check
+  if (title.length < min || title.length > max || !imageValid) {
+    titleHelp.textContent = `Title must be between ${min} and ${max} characters, and an image must be selected.`;
+    titleHelp.classList.remove("valid");
+    return; // Stop here, do not continue
+  }
+  const newCard = {
+    image: URL.createObjectURL(fileInput.files[0]),
+    text: titleInput.value,
+    name: titleInput.value,
+  };
+  cards.unshift(newCard);
+  displayCard(cards);
+
+  newPostModal.close();
+  newPostForm.reset();
+  preview.innerHTML = "";
+  postBtn.disabled = true; // disable post button after reset
+  newPostBtn.focus();
 });
