@@ -112,36 +112,44 @@ function displayCard(cards) {
 }
 displayCard(cards);
 
-//Cards Modal
-const cardElements = document.querySelectorAll(".card");
+    const closeImgBtn = document.querySelector(
+      ".imgModal .imageModal__content .modal__close"
+    );
 
-// Get card Modal Element
-const modalImg = document.getElementById("modalImg");
-const modalText = document.querySelector(".modal__text p");
-const modalTextImg = document.querySelector(".modal__text img");
-const imageModal = document.getElementById("imageModal");
-const closeImgBtn = document.querySelector(
-  ".imgModal .imageModal__content .modal__close"
-);
+function setupCardPreviewModalListeners() {
+    //Cards Modal
+    const cardElements = document.querySelectorAll(".card");
+    
+    // Get card Modal Element
+    const modalImg = document.getElementById("modalImg");
+    const modalText = document.querySelector(".modal__text p");
+    const modalTextImg = document.querySelector(".modal__text img");
+    const imageModal = document.getElementById("imageModal");
 
-//mapping through cards
-cardElements.forEach((card) => {
-  // Getting each card properties
-  const cardImg = card.querySelector("img");
-  const cardText = card.querySelector(".card__text").textContent;
-  const cardTextImg = card.querySelector(".card__icon");
+    
+    //mapping through cards
+    cardElements.forEach((card) => {
+      // Getting each card properties
+      const cardImg = card.querySelector("img");
+      const cardText = card.querySelector(".card__text").textContent;
+      const cardTextImg = card.querySelector(".card__icon");
+    
+      cardImg.addEventListener("click", () => {
+        imageModal.style.display = "block";
+        //checking
+        if (cardImg && cardText) {
+          modalImg.src = cardImg.src;
+          modalText.textContent = cardText;
+          modalTextImg.src = cardTextImg.src;
+          modalTextImg.alt = cardTextImg.alt;
+        }
+      });
+    });
+}
 
-  cardImg.addEventListener("click", () => {
-    imageModal.style.display = "block";
-    //checking
-    if (cardImg && cardText) {
-      modalImg.src = cardImg.src;
-      modalText.textContent = cardText;
-      modalTextImg.src = cardTextImg.src;
-      modalTextImg.alt = cardTextImg.alt;
-    }
-  });
-});
+setupCardPreviewModalListeners()
+
+
 
 // Close cardModal
 function closeCardModal() {
@@ -272,6 +280,7 @@ newPostForm.addEventListener("submit", (e) => {
   };
   cards.unshift(newCard);
   displayCard(cards);
+  setupCardPreviewModalListeners()
 
   newPostModal.close();
   newPostForm.reset();
